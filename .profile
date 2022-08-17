@@ -10,7 +10,9 @@ alias free="free -m"                      # show sizes in MB
 alias dc="docker-compose"
 alias i="yay -S --noconfirm"
 alias update-os="yay -Syyuu --noconfirm"
-alias cfg="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dot="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dot-ignore="echo "$(dot status --porcelain | grep '^??' | cut -c4-)" >> .gitignore"
+
 # USER FUNCTIONS
 # # ex - archive extractor
 # # usage: ex <file>
@@ -58,3 +60,4 @@ export PYTHONPATH=$HOME/Projects:$HOME/Modules/python:$SPARK_HOME/python:$PYTHON
 # Spark environment variables
 export SPARK_HOME=/opt/spark
 export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+

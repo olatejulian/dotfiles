@@ -142,3 +142,4 @@ source /usr/share/nvm/init-nvm.sh
 # poetry stuffs
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
+
