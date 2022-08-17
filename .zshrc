@@ -80,10 +80,12 @@ plugins=(
 	node
 	poetry
 	python
+  vscode
 	docker
 	docker-compose
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+  history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,38 +110,6 @@ export LANG=en_US.UTF-8
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
-alias update-os="sudo apt update -y; sudo apt upgrade -y; sudo apt autoremove -y"
-alias s="systemctl"
-alias g="git"
-alias d="docker"
-alias dc="docker-compose"
-alias k="kubectl"
-alias nest-repo="mkdir -p "
-alias mk-api="mkdir -p test src src/modules src/controllers src/services src/schemas src/repositories src/repositories/implementations src/repositories/interfaces src/repositories/fake"
-
-# ex - archive extractor
-# usage: ex <file>
-ex ()
-{
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -159,7 +129,16 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# poetry stuffs
-#fpath+=~/.zfunc
-# autoload -Uz compinit && compinit
+# >>> node environment >>>
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
+source /usr/share/nvm/init-nvm.sh
+# <<< node environment <<<
 
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+# poetry stuffs
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
