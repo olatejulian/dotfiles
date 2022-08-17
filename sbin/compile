@@ -1,0 +1,14 @@
+#!/home/olatejulian/.anaconda/bin/python
+
+import subprocess, sys, os
+
+commands = [
+    ['pdflatex', '-interaction=nonstopmode', sys.argv[1] + '.tex'],
+    ['bibtex', '-interaction=nonstopmode', sys.argv[1] + '.aux'],
+    ['pdflatex', '-interaction=nonstopmode', sys.argv[1] + '.tex'],
+    ['pdflatex', '-interaction=nonstopmode', sys.argv[1] + '.tex'],
+    ['sh', os.path.join(os.path.dirname(__file__), 'compile.sh'), sys.argv[1]]
+]
+if __name__ == '__main__':
+    for c in commands:
+        subprocess.call(c)
