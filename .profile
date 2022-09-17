@@ -3,6 +3,7 @@
 # USER ALIAS
 
 alias g="git"
+alias gis="clear; git status"
 alias cp="cp -i"                          # confirm before overwriting something
 alias df="df -h"                          # human-readable sizes
 alias d="docker"
@@ -53,6 +54,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Java environment variables
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/"
+
+# Go environment variables
+export PATH=$(go env GOPATH)/bin:$PATH
 
 # Python environment variables
 export PYTHONPATH=$HOME/Projects:$HOME/Modules/python:$SPARK_HOME/python:$PYTHONPATH
