@@ -39,14 +39,6 @@ ex ()
   fi
 }
 
-mk () {
-    if [ -d $1 ] ; then
-        mkdir $1
-    else
-        touch $1
-    fi
-}
-
 # ENVIRONMENT VARIABLES
 
 # If you come from bash you might have to change your $PATH.
@@ -77,3 +69,4 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
   #  eval `cat $HOME/.ssh/ssh-agent`
 fi
 
+source /usr/share/nvm/init-nvm.sh

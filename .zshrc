@@ -80,12 +80,12 @@ plugins=(
 	node
 	poetry
 	python
-  vscode
+	vscode
 	docker
 	docker-compose
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-  history-substring-search
+        history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
