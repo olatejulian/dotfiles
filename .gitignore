@@ -11,7 +11,8 @@
 .ipython/
 .kube/
 .lesshst
-.local/
+.local/bin/
+.local/share/
 .python_history
 .shell.pre-oh-my-zsh
 .ssh/
