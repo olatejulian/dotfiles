@@ -82,6 +82,7 @@ plugins=(
 	python
 	vscode
 	docker
+	kubectl
 	docker-compose
 	zsh-autosuggestions
 	zsh-syntax-highlighting
@@ -89,6 +90,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+source <(kubectl completion zsh)
 
 # User configuration
 
@@ -113,33 +116,4 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/olatejulian/.anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/olatejulian/.anaconda/etc/profile.d/conda.sh" ]; then
-        . "/home/olatejulian/.anaconda/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/olatejulian/.anaconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# >>> node environment >>>
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
-source /usr/share/nvm/init-nvm.sh
-# <<< node environment <<<
-
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
-# poetry stuffs
-fpath+=~/.zfunc
-autoload -Uz compinit && compinit
 

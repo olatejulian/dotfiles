@@ -7,12 +7,15 @@ alias gis="clear; git status"
 alias cp="cp -i"                          # confirm before overwriting something
 alias df="df -h"                          # human-readable sizes
 alias d="docker"
-alias free="free -m"                      # show sizes in MB
 alias dc="docker-compose"
+alias free="free -m"                      # show sizes in MB
 alias i="yay -S --noconfirm"
-alias update-os="yay -Syyuu --noconfirm"
+alias update-os="sudo pacman -Syyuu --noconfirm; yay -Syyuu --noconfirm"
 alias dot="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias dot-ignore="echo "$(dot status --porcelain | grep '^??' | cut -c4-)" >> .gitignore"
+alias dot-ignore="echo \"$(dot status --porcelain | grep '^??' | cut -c4-)\" >> .gitignore"
+alias k="kubectl"
+alias mk="minikube kubectl"
+alias vm="vboxmanage"
 
 # USER FUNCTIONS
 # # ex - archive extractor
@@ -42,21 +45,23 @@ ex ()
 # ENVIRONMENT VARIABLES
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/sbin:$PATH
 
 # Java environment variables
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/"
 
 # Go environment variables
-export PATH=$(go env GOPATH)/bin:$PATH
+#if go &> /dev/null
+#then
+export GOPATH=$(go env GOPATH)/bin:$GOPATH
+#fi
 
 # Python environment variables
-export PYTHONPATH=$HOME/Projects:$HOME/Modules/python:$SPARK_HOME/python:$PYTHONPATH
+export PYTHONPATH=$HOME/Projects:$SPARK_HOME/python:$PYTHONPATH
 
 # Spark environment variables
 export SPARK_HOME=/opt/spark
 export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
-
 
 #HANDLE WITH SSH
 if [ -z "$SSH_AUTH_SOCK" ]; then
@@ -69,4 +74,5 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
   #  eval `cat $HOME/.ssh/ssh-agent`
 fi
 
-source /usr/share/nvm/init-nvm.sh
+# Ablity to use ctrl + backspace to backward a word
+bindkey '^H' backward-kill-word

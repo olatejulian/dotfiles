@@ -94,3 +94,23 @@ go/
 package.json
 
 .zcompdump-windows-julian-5.9.zwc
+.asdfrc
+.cert/
+.kite/
+.local/lib/
+.local/pipx/
+.local/state/
+.nanorc
+.nuget/
+.pgadmin/
+.terraform.d/
+.texlive/
+.thunderbird/
+.vagrant.d/
+.vpython-root/
+.vpython_cipd_cache/
+.zcompdump-nitro5manjaro-5.9
+.zcompdump-nitro5manjaro-5.9.zwc
+Templates/
+VirtualBox VMs/
+go
