@@ -5,3 +5,4 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 export VISUAL="kate"
+. "$HOME/.cargo/env"

@@ -180,25 +180,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/olatejulian/.anaconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/olatejulian/.anaconda/etc/profile.d/conda.sh" ]; then
-        . "/home/olatejulian/.anaconda/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/olatejulian/.anaconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# >>> node environment >>>
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
-source /usr/share/nvm/init-nvm.sh
-# <<< node environment <<<
+. "$HOME/.cargo/env"
