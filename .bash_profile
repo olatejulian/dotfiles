@@ -5,4 +5,11 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 export VISUAL="kate"
-. "$HOME/.cargo/env"
+
+export MANPATH="/usr/local/man:$MANPATH"
+
+profile_path = $HOME/.profile
+
+if [ -f $profile_path ]; then
+    source $profile_path
+fi
