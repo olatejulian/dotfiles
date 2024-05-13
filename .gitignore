@@ -141,3 +141,12 @@ go
 Workbench/
 container/
 documents/
+.android/
+.bash_profile.bak
+.fonts/
+.profile.bak
+.sudo_as_admin_successful
+.xsession-errors
+.zcompdump-OLATEJULIANPC02-5.9
+.zcompdump-OLATEJULIANPC02-5.9.zwc
+Android/
