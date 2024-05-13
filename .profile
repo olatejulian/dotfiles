@@ -1,7 +1,9 @@
 # ENVIRONMENT VARIABLES
 # asdf
-if asdf &> /dev/null; then
-    source $HOME/.asdf/asdf.sh
+ASDF_SETTINGS=$HOME/.asdf/asdf.sh
+
+if asdf &> /dev/null && [ -f $ASDF_SETTINGS ]; then
+    source $ASDF_SETTINGS
 fi
 
 # golang
