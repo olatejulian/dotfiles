@@ -1,4 +1,3 @@
-
 # USER ALIAS
 
 alias g="git"
@@ -10,7 +9,9 @@ alias d="docker"
 alias dc="docker-compose"
 alias free="free -m"                      # show sizes in MB
 alias i="yay -S --noconfirm"
-alias update-os="sudo pacman -Suuyy --noconfirm; yay -Suuyy --noconfirm"
+alias di="sudo apt install -y"
+alias arch-up="sudo pacman -Suuyy --noconfirm; yay -Suuyy --noconfirm"
+alias deb-up="sudo apt upgrade -y; sudo apt update -y"
 alias dot="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias dot-ignore="echo \"$(dot status --porcelain | grep '^??' | cut -c4-)\" >> .gitignore"
 alias k="kubectl"
@@ -43,14 +44,12 @@ ex ()
 }
 
 # ASDF SETTINGS
-
-. /opt/asdf-vm/asdf.sh
+. "$HOME/.asdf/asdf.sh"
 
 # JAVA SETTINGS
 . $HOME/.asdf/plugins/java/set-java-home.zsh
 
 # ENVIRONMENT VARIABLES
-
 source $HOME/.secrets
 
 # If you come from bash you might have to change your $PATH.
@@ -95,4 +94,3 @@ esac
 # Ablity to use ctrl + backspace to backward a word
 bindkey '^H' backward-kill-word
 
-. "$HOME/.cargo/env"
