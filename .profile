@@ -25,7 +25,7 @@ fi
 
 # node
 if pnpm &> /dev/null; then
-    export PNPM_HOME=$HOME/.local/share/pnpm
+    export PNPM_HOME=$(which pnpm)
 
     export PATH=$PATH:$PNPM_HOME
 
