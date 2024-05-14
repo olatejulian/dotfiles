@@ -25,31 +25,6 @@ if java &>/dev/null && asdf &>/dev/null; then
 
 fi
 
-# node
-if bit &>/dev/null; then
-    BIN_PATH=$(which bit)
-
-    case ":$PATH:" in
-    *":$BIN_PATH:"*) ;;
-
-    *) export PATH=$PATH:$BIN_PATH ;;
-
-    esac
-
-fi
-
-if pnpm &>/dev/null; then
-    export PNPM_HOME=$HOME/.asdf/shims/
-
-    case ":$PATH:" in
-    *":$PNPM_HOME:"*) ;;
-
-    *) export PATH=$PATH:$PNPM_HOME ;;
-
-    esac
-
-fi
-
 # python
 if python --version &>/dev/null; then
     if pyspark --version &>/dev/null; then
@@ -57,12 +32,12 @@ if python --version &>/dev/null; then
 
         export PYTHONPATH=$PYTHONPATH:$SPARK_HOME/python
 
-        SPARK_HOME_BIN=$SPARK_HOME/bin
+        SPARK_BIN=$SPARK_HOME/bin
 
         case ":$PATH:" in
-        *":$SPARK_HOME_BIN:"*) ;;
+        *":$SPARK_BIN:"*) ;;
 
-        *) export PATH=$PATH:SPARK_HOME_BIN ;;
+        *) export PATH=$PATH:SPARK_BIN ;;
 
         esac
 
@@ -74,12 +49,12 @@ fi
 if cargo &>/dev/null && rustc &>/dev/null; then
     export RUST_WITHOUT=rust-docs
 
-    CARGO_BIN_PATH=$HOME/.cargo/bin
+    CARGO_BIN=$HOME/.cargo/bin
 
     case ":$PATH:" in
-    *":$CARGO_BIN_PATH:"*) ;;
+    *":$CARGO_BIN:"*) ;;
 
-    *) export PATH=$PATH:$CARGO_BIN_PATH ;;
+    *) export PATH=$PATH:$CARGO_BIN ;;
 
     esac
 
@@ -127,6 +102,15 @@ case ":$PATH:" in
 *":$LOCAL_SBIN:"*) ;;
 
 *) export PATH=$PATH:$LOCAL_SBIN ;;
+
+esac
+
+HOME_BIN=$HOME/bin
+
+case ":$PATH:" in
+*":$HOME_BIN:"*) ;;
+
+*) export PATH=$PATH:$HOME_BIN ;;
 
 esac
 
