@@ -88,9 +88,15 @@ plugins=(
 	zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
+OHMYZSH_SH=$ZSH/oh-my-zsh.sh
 
-source <(kubectl completion zsh)
+if [ -f $OHMYZSH_SH ]; then
+    source $OHMYZSH_SH
+fi
+
+if kubectl &>/dev/null; then
+    source <(kubectl completion zsh)
+fi
 
 # User configuration
 PROFILE_PATH=$HOME/.profile
@@ -123,4 +129,3 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 # Bindkeys
 # Ablity to use ctrl + backspace to backward a word
 bindkey '^H' backward-kill-word
-

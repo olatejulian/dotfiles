@@ -157,6 +157,7 @@ alias i="yay -S --noconfirm"                                                    
 alias k="kubectl"                                                                           #
 alias mk="minikube kubectl"                                                                 #
 alias pc="pre-commit"                                                                       #
+alias r="yay -Rcnssuv"									    #
 alias src="source $HOME/.zshrc"                                                             #
 alias src-bash="source $HOME/.bashrc"                                                       #
 alias vm="vboxmanage"                                                                       #
