@@ -1,4 +1,54 @@
 # ENVIRONMENT VARIABLES
+# android
+if [ -d /opt/android-sdk ]; then
+    export ANDROID_SDK_ROOT=/opt/android-sdk
+
+    export ANDROID_HOME=$ANDROID_SDK_ROOT
+
+    case ":$PATH:" in
+    *":$ANDROID_SDK_ROOT:"*) ;;
+
+    *) export PATH=$PATH:$ANDROID_SDK_ROOT ;;
+
+    esac
+
+    case ":$PATH:" in
+    *":$ANDROID_SDK_ROOT/emulator:"*) ;;
+
+    *) export PATH=$PATH:$ANDROID_SDK_ROOT/emulator ;;
+
+    esac
+
+    case ":$PATH:" in
+    *":$ANDROID_SDK_ROOT/platforms"*) ;;
+
+    *) export PATH=$PATH:$ANDROID_SDK_ROOT/platforms ;;
+
+    esac
+
+    case ":$PATH:" in
+    *":$ANDROID_SDK_ROOT/platform-tools:"*) ;;
+
+    *) export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools ;;
+
+    esac
+
+    case ":$PATH:" in
+    *":$ANDROID_SDK_ROOT/tools:"*) ;;
+
+    *) export PATH=$PATH:$ANDROID_SDK_ROOT/tools ;;
+
+    esac
+
+    case ":$PATH:" in
+    *":$ANDROID_SDK_ROOT/tools/bin:"*) ;;
+
+    *) export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin ;;
+
+    esac
+
+fi
+
 # asdf
 ASDF_SETTINGS=$HOME/.asdf/asdf.sh
 
@@ -24,6 +74,16 @@ if java &>/dev/null && asdf &>/dev/null; then
     fi
 
 fi
+
+# node.js
+export PNPM_HOME=$HOME/.local/share/pnpm
+
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+
+*) export PATH="$PNPM_HOME:$PATH" ;;
+
+esac
 
 # python
 if python --version &>/dev/null; then
