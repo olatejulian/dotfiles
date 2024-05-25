@@ -153,3 +153,8 @@ documents/
 go
 go/
 package.json
+.bash_profile.default
+.bashrc.default
+.zcompdump-workstation-5.9
+.zcompdump-workstation-5.9.zwc
+.zshrc.oh-my-zsh
