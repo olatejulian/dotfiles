@@ -1,5 +1,4 @@
 # ENVIRONMENT VARIABLES
-<<<<<<< HEAD
 # android
 if [ -d /opt/android-sdk ]; then
     export ANDROID_SDK_ROOT=/opt/android-sdk
@@ -120,8 +119,6 @@ if cargo &>/dev/null && rustc &>/dev/null; then
     esac
 
 fi
-=======
->>>>>>> a3c26d5 (chore: :wrench: update path creation)
 
 # secrets
 SECRETS_PATH="$HOME/.secrets"

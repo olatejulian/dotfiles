@@ -1,1 +1,1 @@
-cp -rf $HOME/.dotfiles $HOME
+cp -fr $HOME/.dotfiles $HOME

@@ -34,7 +34,7 @@ Plug 'francoiscabrol/ranger.vim'
 
 call plug#end()
 
-" autocmd VimEnter * 
+" autocmd VimEnter *
 
 
 " Airline Settings
