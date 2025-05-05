@@ -1,7 +1,10 @@
-source ./aliases.sh
-source ./asdf.sh
-source ./bind-keys.sh
-source ./functions.sh
-source ./load-secrets.sh
-source ./paths.sh
-source ./processes.sh
+USER_CONFIG_PATH="$HOME/.config/user.d"
+SHELL_CONFIG_PATH="$USER_CONFIG_PATH/dotfiles/shell"
+
+source "$SHELL_CONFIG_PATH/aliases.sh"
+source "$SHELL_CONFIG_PATH/asdf.sh"
+source "$SHELL_CONFIG_PATH/bind-keys.sh"
+source "$SHELL_CONFIG_PATH/functions.sh"
+source "$SHELL_CONFIG_PATH/load-secrets.sh"
+source "$SHELL_CONFIG_PATH/paths.sh"
+source "$SHELL_CONFIG_PATH/processes.sh"
