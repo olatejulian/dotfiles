@@ -98,14 +98,6 @@ if kubectl &>/dev/null; then
     source <(kubectl completion zsh)
 fi
 
-# User configuration
-PROFILE_PATH=$HOME/.profile
-
-if [ -f $PROFILE_PATH ]; then
-	source $PROFILE_PATH
-
-fi
-
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -126,6 +118,14 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Bindkeys
-# Ablity to use ctrl + backspace to backward a word
-bindkey '^H' backward-kill-word
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+# User configuration
+PROFILE_PATH=$HOME/.profile
+
+if [ -f $PROFILE_PATH ]; then
+	source $PROFILE_PATH
+
+fi

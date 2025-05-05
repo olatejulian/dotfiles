@@ -1,4 +1,5 @@
 # ENVIRONMENT VARIABLES
+<<<<<<< HEAD
 # android
 if [ -d /opt/android-sdk ]; then
     export ANDROID_SDK_ROOT=/opt/android-sdk
@@ -119,29 +120,45 @@ if cargo &>/dev/null && rustc &>/dev/null; then
     esac
 
 fi
+=======
+>>>>>>> a3c26d5 (chore: :wrench: update path creation)
 
 # secrets
-SECRETS_PATH=$HOME/.secrets
+SECRETS_PATH="$HOME/.secrets"
 
 if [ -f $SECRETS_PATH ]; then
     source $SECRETS_PATH
 
 fi
 
-# sonarqube
-SONAR_SCANNER_HOME=/opt/sonar-scanner
+# ASDF settings
+if asdf --version &>/dev/null; then
+    ASDF_DATA_DIR="$HOME/.asdf"
 
-if [ -d $SONAR_SCANNER_HOME ]; then
-    export SONAR_SCANNER_HOME
+    # set asdf shims
+    if [ -d $ASDF_DATA_DIR ]; then
+        export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
-    SONAR_SCANNER_HOME_BIN=$SONAR_SCANNER_HOME/bin
+    fi
 
-    case ":$PATH:" in
-    *":$SONAR_SCANNER_HOME_BIN:"*) ;;
+    # plugins settings
+    # set java home
+    if [ "$SHELL" = "/usr/bin/zsh" ]; then
+        source "$ASDF_DATA_DIR/plugins/java/set-java-home.zsh"
 
-    *) export PATH=$PATH:$SONAR_SCANNER_HOME_BIN ;;
+    else
+        source "$ASDF_DATA_DIR/plugins/java/set-java-home.bash"
 
-    esac
+    fi
+
+    # set pnpm home
+    export PNPM_HOME="$HOME/.local/share/pnpm"
+
+
+    if [[ ":$PATH:" != *":$PNPM_HOME:"* && -d "$PNPM_HOME" ]]; then
+        export PATH="$PATH:$PNPM_HOME"
+
+    fi
 
 fi
 
@@ -149,40 +166,17 @@ fi
 # user local binaries
 LOCAL_BIN=$HOME/.local/bin
 
-case ":$PATH:" in
-*":$LOCAL_BIN:"*) ;;
+if [[ ":$PATH:" != *":$LOCAL_BIN:"* && -d "$LOCAL_BIN" ]]; then
+    export PATH="$PATH:$LOCAL_BIN"
 
-*) export PATH=$PATH:$LOCAL_BIN ;;
-
-esac
+fi
 
 LOCAL_SBIN=$HOME/.local/sbin
 
-case ":$PATH:" in
-*":$LOCAL_SBIN:"*) ;;
+if [[ ":$PATH:" != *":$LOCAL_SBIN:"* && -d "$LOCAL_SBIN" ]]; then
+    export PATH="$PATH:$LOCAL_SBIN"
 
-*) export PATH=$PATH:$LOCAL_SBIN ;;
-
-esac
-
-HOME_BIN=$HOME/bin
-
-case ":$PATH:" in
-*":$HOME_BIN:"*) ;;
-
-*) export PATH=$PATH:$HOME_BIN ;;
-
-esac
-
-# JetBrains Toolbox scripts path
-TOOLBOX_SCRIPTS=$HOME/.local/share/JetBrains/Toolbox/scripts
-
-case ":$PATH:" in
-*":$TOOLBOX_SCRIPTS:"*) ;;
-
-*) export PATH=$PATH:$TOOLBOX_SCRIPTS ;;
-
-esac
+fi
 
 # PROCESSES
 # set ssh agent process
@@ -190,13 +184,13 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
     # Check for a currently running instance of the agent
     RUNNING_AGENT="$(ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]')"
 
-    if [ "$RUNNING_AGENT" = "0" ]; then
+    if [ "$RUNNING_AGENT" = "0" ] && [ -f "$HOME/.ssh/ssh-agent" ]; then
         # Launch a new instance of the agent
         ssh-agent -s &>$HOME/.ssh/ssh-agent
 
     fi
 
-    eval $(cat $HOME/.ssh/ssh-agent) &>/dev/null
+    # eval $(cat $HOME/.ssh/ssh-agent) &>/dev/null
 
 fi
 
@@ -217,7 +211,7 @@ alias i="yay -S --noconfirm"                                                    
 alias k="kubectl"                                                                           #
 alias mk="minikube kubectl"                                                                 #
 alias pc="pre-commit"                                                                       #
-alias r="yay -Rcnssuv"									    #
+alias r="yay -Rcnssuv"                                                                      #
 alias src="source $HOME/.zshrc"                                                             #
 alias src-bash="source $HOME/.bashrc"                                                       #
 alias vm="vboxmanage"                                                                       #
@@ -245,3 +239,7 @@ ex() {
         echo "'$1' is not a valid file"
     fi
 }
+
+# Bind keys
+# Ability to use ctrl + backspace to backward a word
+bindkey '^H' backward-kill-word
