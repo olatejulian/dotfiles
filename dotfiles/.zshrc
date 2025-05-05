@@ -123,7 +123,7 @@ zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 
 # User configuration
-USER_CONFIG_ENTRY_POINT="$HOME/.config/dotfiles/dotfiles/shell/__init__.sh"
+USER_CONFIG_ENTRY_POINT="$HOME/.config/user.d/dotfiles/shell/__init__.sh"
 
 if [ -f $USER_CONFIG_ENTRY_POINT ]; then
     source $USER_CONFIG_ENTRY_POINT

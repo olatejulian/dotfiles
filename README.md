@@ -1,15 +1,15 @@
 # Dotfiles
 
-Installation: 
+## Installation:
 
-``` bash
+```bash
 cd /tmp
 
 git clone https://github.com/olatejulian/dotfiles.git
 
-mv ./dotfiles/ $HOME/.config/user.d
+cp -ir ./dotfiles $HOME/.config/user.d
 
-rm -fr ./dotfiles
+rm -rf /tmp/dotfiles
 
-ln -s $HOME/.config/user.d/src/.zshrc $HOME/.zshrc
+ln -s $HOME/.config/user.d/dotfiles/.zshrc $HOME/.zshrc
 ```
