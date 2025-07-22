@@ -7,9 +7,13 @@ cd /tmp
 
 git clone https://github.com/olatejulian/dotfiles.git
 
-cp -ir ./dotfiles $HOME/.config/user.d
+cp -ir ./dotfiles $HOME/.config
 
-rm -rf /tmp/dotfiles
+rm -dfr /tmp/dotfiles
 
-ln -s $HOME/.config/user.d/dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/.config/dotfiles/src/.zshrc $HOME/.zshrc
+
+cd $HOME
+
+source $HOME/.zshrc
 ```

@@ -2,7 +2,7 @@
 	email = julian.lf.olate@gmail.com
 	name = olatejulian
 [core]
-	editor = vim
+	editor = nvim
 	autocrlf = false
 [filter "lfs"]
 	clean = git-lfs clean -- %f

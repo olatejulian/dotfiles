@@ -22,7 +22,7 @@ if asdf --version &>/dev/null; then
 
 
     if [[ ":$PATH:" != *":$PNPM_HOME:"* && -d "$PNPM_HOME" ]]; then
-        export PATH="$PATH:$PNPM_HOME"
+        export PATH="$PNPM_HOME:$PATH"
 
     fi
 
