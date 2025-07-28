@@ -67,4 +67,3 @@ autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redra
 " Ranger Plugin Settings
 let g:ranger_open_newtab = 1
 let g:ranger_replace_netrw = 1
-

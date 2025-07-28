@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=gdrive
+GenericName=gdrive
+Comment=auto mounts googe drive remote storage on log in
+Exec=/home/julian/.scripts/rcloneMountGoogleDrive.sh
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
