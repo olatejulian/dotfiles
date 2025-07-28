@@ -1,5 +1,5 @@
-USER_CONFIG_PATH="$HOME/.config"
-SHELL_CONFIG_PATH="$USER_CONFIG_PATH/dotfiles/src/shell"
+USER_DIR="$HOME/.config/user"
+SHELL_CONFIG_PATH="$USER_DIR/src/sh"
 
 source "$SHELL_CONFIG_PATH/aliases.sh"
 source "$SHELL_CONFIG_PATH/asdf.sh"
