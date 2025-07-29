@@ -124,8 +124,8 @@ fpath+=~/.zfunc
 
 # User configuration
 USER_DIR="$HOME/.config/user"
-ENTRY_POINT="$USER_CONFIG_DIR/src/sh/__init__.sh"
+ENTRY_POINT="$USER_DIR/src/sh/__init__.sh"
 
-if [ -f $USER_DIR ]; then
+if [[ -f "$ENTRY_POINT" ]]; then
     source $ENTRY_POINT
 fi
