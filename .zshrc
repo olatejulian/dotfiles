@@ -104,19 +104,19 @@ export LANG=en_US.UTF-8
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-# autoload -Uz compinit
-# zstyle ':completion:*' menu select
-# fpath+=~/.zfunc
+# Zstyle configuration
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+
+# Fuzzy finder
+eval "$(fzf --zsh)"
 
 # User Profile
 ZPROFILE="$HOME/.zprofile"
 
 [[ -f "$ZPROFILE" ]] && source "$ZPROFILE"
+
