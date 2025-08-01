@@ -110,13 +110,25 @@ export LANG=en_US.UTF-8
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+# Options
+setopt appendhistory                                            # Immediately append history instead of overwriting
+setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
+setopt histignorespace                                          # Don't save commands that start with space
+setopt inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
+setopt sharehistory                                             # Share history between all sessions
 
-# Zstyle configuration
+# History settings
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# Completions configuration
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*:' list-colors "${(s.:.)LS_COLORS}"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # Fuzzy finder
 eval "$(fzf --zsh)"
@@ -125,4 +137,3 @@ eval "$(fzf --zsh)"
 ZPROFILE="$HOME/.zprofile"
 
 [[ -f "$ZPROFILE" ]] && source "$ZPROFILE"
-
