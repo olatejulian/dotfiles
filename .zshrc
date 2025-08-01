@@ -84,16 +84,17 @@ plugins=(
 	docker
 	docker-compose
 	git
-	history-substring-search
 	kubectl
 	node
 	python
 	vscode
 	zsh-autosuggestions
+    zsh-completions
+    zsh-history-substring-search
 	zsh-syntax-highlighting
 )
 
-# load zsh-completions plugin
+# load zsh-completions plugin before oh-my-zsh
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit && compinit
 
