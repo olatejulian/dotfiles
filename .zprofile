@@ -1,4 +1,4 @@
-# ====================================<MY SHELL PROFILE SETUP>======================================
+# ===================================<MY SHELL PROFILE SETUP>======================================
 
 # ===========================================<ALIASES>==============================================
 alias arch-up="sudo pacman -Suuyy --noconfirm; yay -Suuyy --noconfirm"
@@ -19,6 +19,21 @@ alias r="yay -Rcnssuv --noconfirm"
 alias src="source $HOME/.zshrc"
 alias src-bash="source $HOME/.bashrc"
 alias vm="vboxmanage"
+# ==================================================================================================
+
+# =====================================<ENVIROMENT VARIABLES>=======================================
+# XDG Paths
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# Default apps
+export BROWSER="brave"
+export EDITOR="nvim"
+export PAGER="less"
+export TERMINAL="ghostty"
+export VISUAL="code -w"
 # ==================================================================================================
 
 # ==========================================<FUNCTIONS>=============================================
