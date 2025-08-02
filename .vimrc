@@ -1,69 +1,113 @@
-"" www.github.com/olatejulian
+" =========================
+" General Settings
+" =========================
+set nocompatible                " Use Vim defaults, not Vi
+set backspace=indent,eol,start  " Make backspace behave normally
+set number                      " Show line numbers
+set hidden                      " Allow buffer switching without saving
+set mouse=a                     " Enable mouse support
+set clipboard=unnamedplus       " Use system clipboard
 
-" Vanilla Vim Settings
-set nu!
-set autoindent
-set incsearch
-set wildmenu
-set laststatus=2
-set confirm
-set mouse=a
-set title
-set splitbelow
+" =========================
+" Indentation & Tabs
+" =========================
+set tabstop=4                   " Number of visual spaces per tab
+set shiftwidth=4                " Spaces for autoindent
+set expandtab                   " Use spaces instead of tabs
+set smartindent                 " Auto indent new lines
+set autoindent                  " Copy indent from current line
 
-" Dracula Theme
-" packadd! dracula
-" syntax enable
-" colorscheme dracula
+" =========================
+" Search
+" =========================
+set ignorecase                  " Case insensitive search...
+set smartcase                   " ...unless uppercase used
+set incsearch                   " Show matches as you type
+set hlsearch                    " Highlight matches
 
-" Plugin (vim-plug as plugin manager)
-call plug#begin()
+" =========================
+" UI Improvements
+" =========================
+syntax on                       " Enable syntax highlighting
+set showcmd                     " Show typed command at bottom
+set showmode                    " Show current mode
+set ruler                       " Show cursor position
+set wildmenu                    " Tab completion menu
+set wildmode=longest:full,full
+set title                       " Show file title in terminal titlebar
 
-"PLug 'itchyny/lightline.vim'
-Plug 'dense-analysis/ale'
-Plug 'codota/tabnine-vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'frazrepo/vim-rainbow'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'lervag/vimtex'
-Plug 'sheerun/vim-polyglot'
-Plug 'francoiscabrol/ranger.vim'
+" =========================
+" File Management
+" =========================
+set noswapfile                  " Don't create .swp files
+set nobackup                    " Don't keep backup file
+set nowritebackup               " Don't write backup before overwriting
+set undofile                    " Persistent undo
 
-call plug#end()
+" =========================
+" Useful Keymaps
+" =========================
+let mapleader = " "
 
-" autocmd VimEnter *
+set pastetoggle=<F2>            " Toggle paste mode (avoids autoindent messing up paste)
 
+" Quickly save with leader+s
+nnoremap <leader>s :w<CR>
 
-" Airline Settings
-let g:airline_theme='dracula'
+" Move between splits easily
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+" Searching
+nnoremap <silent> <leader>h :nohlsearch<CR>
 
-" airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-"
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'default'
-"
-" Latex and Vimtex Settings
-" for auto-compile saved tex files
-autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
-"
+" Delete entire word with ctrl + backspace
+inoremap <C-BS> <C-w>
 
-" Ranger Plugin Settings
-let g:ranger_open_newtab = 1
-let g:ranger_replace_netrw = 1
+" Move lines up or down
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" =========================
+" Notes / Writing Tweaks
+" =========================
+" Enable spellcheck for writing (you can toggle with <F3>)
+set spelllang=en
+nnoremap <F3> :setlocal spell!<CR>
+
+" =========================
+" Colors
+" =========================
+set t_Co=256
+set background=dark
+
+" colorscheme darkblue
+" colorscheme default
+" colorscheme delek
+colorscheme desert
+" colorscheme elflord
+" colorscheme evening
+" colorscheme habamax
+" colorscheme industry
+" colorscheme koehler
+" colorscheme lunaperche
+" colorscheme morning
+" colorscheme murphy
+" colorscheme pablo
+" colorscheme peachpuff
+" colorscheme quiet
+" colorscheme retrobox
+" colorscheme ron
+" colorscheme shine
+" colorscheme slate
+" colorscheme sorbet
+" colorscheme torte
+" colorscheme unokai
+" colorscheme wildcharm
+" colorscheme zaibatsu
+" colorscheme zellner
+
