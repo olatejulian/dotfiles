@@ -110,17 +110,22 @@ export LANG=en_US.UTF-8
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-# Options
-setopt appendhistory                                            # Immediately append history instead of overwriting
-setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
-setopt histignorespace                                          # Don't save commands that start with space
-setopt inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
-setopt sharehistory                                             # Share history between all sessions
-
-# History settings
+# History variables
 HISTFILE=$HOME/.zsh_history
+HISTDUP=erase
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=$HISTSIZE
+
+# Options
+# History options
+setopt appendhistory
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_save_no_dups
+setopt inc_append_history
+setopt sharehistory
 
 # Completions configuration
 zstyle ':completion:*' menu select
@@ -137,3 +142,4 @@ eval "$(fzf --zsh)"
 ZPROFILE="$HOME/.zprofile"
 
 [[ -f "$ZPROFILE" ]] && source "$ZPROFILE"
+
