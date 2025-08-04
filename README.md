@@ -1,19 +1,13 @@
 # Dotfiles
 
-## Installation:
+## installation 
 
-```bash
-cd /tmp
+Make sure to install stow first, then run the following commands
 
-git clone https://github.com/olatejulian/dotfiles.git
+```sh
+git clone https://github.com/olatejulian/dotfiles.git $HOME/.dotfiles
 
-cp -ir ./dotfiles $HOME/.config
+cd .dotfiles
 
-rm -dfr /tmp/dotfiles
-
-ln -s $HOME/.config/dotfiles/src/.zshrc $HOME/.zshrc
-
-cd $HOME
-
-source $HOME/.zshrc
+stow .
 ```
