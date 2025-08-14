@@ -136,7 +136,7 @@ zstyle ':completion:*:' list-colors "${(s.:.)LS_COLORS}"
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # Fuzzy finder
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
 
 # User Profile
 ZPROFILE="$HOME/.zprofile"
