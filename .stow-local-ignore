@@ -3,6 +3,7 @@
 .gitignore
 .gitmodules
 .history
+.netrwhist
 .vscode
 LICENSE
 README.md
