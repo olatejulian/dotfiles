@@ -9,5 +9,5 @@ git clone https://github.com/olatejulian/dotfiles.git $HOME/.dotfiles
 
 cd .dotfiles
 
-stow .
+stow <package> # e.g. stow zsh
 ```
