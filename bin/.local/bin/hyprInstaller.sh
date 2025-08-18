@@ -19,6 +19,7 @@ packages=(
     xdg-desktop-portal-hyprland
 
     # other applications
+    brightnessctl
     rofi
     swaync
     waybar
