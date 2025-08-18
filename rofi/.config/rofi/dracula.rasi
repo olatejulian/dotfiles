@@ -1,0 +1,78 @@
+* {
+    background: #282a36;
+    foreground: #f8f8f2;
+    accent: #bd93f9;
+    selected: #50fa7b;
+    p: 2px;
+    br: 5px;
+    b: 1.5px;
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+window {
+    background-color: @background;
+    border-color: @background;
+    boder-radius: @br;
+    border: @b;
+    padding: @p;
+}
+
+mainbox {
+    background-color: @background;
+}
+
+inputbar {
+    background-color: @background;
+    border-color: @accent;
+    border-radius: @br;
+    border: @b;
+    children: [prompt,entry];
+    text-color: @foreground;
+}
+
+prompt {
+    background-color: @accent;
+    text-color: @foreground;
+}
+
+message {
+    background-color: @background;
+    border-color: @accent;
+}
+
+entry {
+    background-color: @background;
+    border-color: @accent;
+    text-color: @foreground;
+}
+
+listview {
+    background-color: @background;
+    border-color: @accent;
+}
+
+element {
+    background-color: @background;
+    border-color: @accent;
+    text-color: @foreground;
+}
+
+element selected {
+    background-color: @selected;
+}
+
+element-icon {
+    size: 25px;
+}
+
+button {
+    background-color: @background;
+    border-color: @accent;
+    text-color: @foreground;
+}
+
+/* vim:ft=css
