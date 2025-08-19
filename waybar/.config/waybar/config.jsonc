@@ -10,7 +10,7 @@
         "network",
         "clock",
         "custom/power"],
-    "spacing": 5,
+    "spacing": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
     "tray": {

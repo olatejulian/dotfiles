@@ -2,8 +2,13 @@
 
 * {
     font-family: Noto Sans;
+    font-size: 13px;
     font-weight: 900;
-    font-size: 11px;
+    /* reset positions */
+    border-radius: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 window#waybar {
@@ -13,56 +18,70 @@ window#waybar {
 
 #workspaces {
     background-color: @background;
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 15px 15px 0;
+}
+
+#workspaces button {
+    border-radius: 15px;
+    margin-left: 5px;
+    padding: 0 5px;
+}
+
+#workspaces button.active {
+    background-color: @purple;
 }
 
 #workspaces button:hover {
     background-color: @currentline;
-    border-radius: 100px;
-    color: @foreground;
 }
-
-#tray,
-#bluetooth,
+/* General modules style */
 #pulseaudio,
 #backlight,
 #battery,
-#network,
-#clock,
-#custom-power {
-    border-radius: 25px;
-    color: @foreground;
-    padding: 0 10px;
+#network
+{
+    background-color: @background;
+    border-left: 0;
+    border-right: 0;
+    padding: 0 5px;
 }
+
 /* Modules */
 /* tray */
 #tray {
     background-color: @background;
+    border-radius: 15px;
+    margin-right: 10px;
+    padding: 0 10px;
+
 }
 
 /* bluetooth */
 #bluetooth {
-    background-color: @cyan;
+    background-color: @background;
+    border-radius: 15px 0 0 15px;
+    color: @cyan;
+    padding: 0 10px;
 }
 
 /* pulseaudio */
 #pulseaudio {
-    background-color: #586798;
+    color: #586798;
 }
 
 /* backlight */
 #backlight {
-    background-color: #985497;
+    color: @pink;
 }
 
 /* battery */
 #battery {
-    background-color: #501487;
+    color: @purple;
 }
 
 
 #battery.charging, #battery.plugged {
-    background-color: @green;
+    color: @green;
 }
 
 @keyframes blink {
@@ -73,8 +92,7 @@ window#waybar {
 }
 
 #battery.critical:not(.charging) {
-    background-color: @red;
-    color: @foreground;
+    color: @red;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -84,22 +102,26 @@ window#waybar {
 
 /* network */
 #network {
-    background-color: #014587;
-    padding-right: 20px;
+    color: #014587;
 }
 
 #network.disconnected {
-    background-color: @red;
+    color: @red;
 }
 
 /* clock */
 #clock {
-    background-color: #328498;
+    background-color: @background;
+    color: @orange;
+    border-radius: 0 15px 15px 0;
+    margin-right: 10px;
+    padding: 0 10px;
 }
 
 /* custom/power */
 #custom-power {
     background-color: @red;
-    border-radius: 25px 0 0 25px;
+    border-radius: 15px 0 0 15px;
+    padding: 0 20px 0 10px;
 }
 
