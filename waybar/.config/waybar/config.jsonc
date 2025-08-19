@@ -1,17 +1,23 @@
 {
     "modules-left": ["hyprland/workspaces"],
     "modules-center": [],
-    "modules-right": ["tray", "pulseaudio", "backlight", "battery", "network", "clock", "custom/power"],
+    "modules-right": [
+        "tray",
+        "bluetooth",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "network",
+        "clock",
+        "custom/power"],
     "spacing": 5,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "clock": {
-        "timezone": "America/Sao_Paulo",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
     "tray": {
         "spacing": 10
+    },
+    "bluetooth": {
+        "format": "{status} "
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -53,12 +59,19 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        // "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "clock": {
+        "timezone": "America/Sao_Paulo",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
     },
     "custom/power": {
         "format" : "⏻",

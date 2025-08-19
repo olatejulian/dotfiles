@@ -1,27 +1,29 @@
+@import "dracula.css";
+
 * {
-    font-family: RobotoMono Nerd Font;
-    font-size: 13px;
+    font-family: Noto Sans;
+    font-weight: 900;
+    font-size: 11px;
 }
 
 window#waybar {
-    background-color: rgba(68, 71, 90, 0);
-    color: #f8f8f2;
-    transition-duration: .5s;
-    transition-property: background-color;
+    background-color: rgba(0, 0, 0, 0);
+    color: @foreground;
 }
 
 #workspaces {
-    background-color: #44475a;
+    background-color: @background;
     border-radius: 0 25px 25px 0;
 }
 
 #workspaces button:hover {
-    background-color: #6272a4;
+    background-color: @currentline;
     border-radius: 100px;
-    color: #f8f8f2;
+    color: @foreground;
 }
 
 #tray,
+#bluetooth,
 #pulseaudio,
 #backlight,
 #battery,
@@ -29,13 +31,18 @@ window#waybar {
 #clock,
 #custom-power {
     border-radius: 25px;
-    color: #f8f8f2;
+    color: @foreground;
     padding: 0 10px;
 }
 /* Modules */
 /* tray */
 #tray {
-    background-color: #321297;
+    background-color: @background;
+}
+
+/* bluetooth */
+#bluetooth {
+    background-color: @cyan;
 }
 
 /* pulseaudio */
@@ -55,7 +62,7 @@ window#waybar {
 
 
 #battery.charging, #battery.plugged {
-    background-color: #50fa7b;
+    background-color: @green;
 }
 
 @keyframes blink {
@@ -66,8 +73,8 @@ window#waybar {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: @red;
+    color: @foreground;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -82,7 +89,7 @@ window#waybar {
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: @red;
 }
 
 /* clock */
@@ -92,7 +99,7 @@ window#waybar {
 
 /* custom/power */
 #custom-power {
-    background-color: #f13450;
+    background-color: @red;
     border-radius: 25px 0 0 25px;
 }
 
