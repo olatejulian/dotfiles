@@ -18,6 +18,7 @@ alias pc="pre-commit"
 alias r="yay -Rcnssuv --noconfirm"
 alias src="source $HOME/.zshrc"
 alias src-bash="source $HOME/.bashrc"
+alias vi="nvim"
 alias vm="vboxmanage"
 # ==================================================================================================
 
