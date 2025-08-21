@@ -8,6 +8,7 @@
     border-radius: 0;
     border: 0;
     margin: 0;
+    min-height: 0;
     padding: 0;
 }
 
@@ -24,7 +25,7 @@ window#waybar {
 #workspaces button {
     border-radius: 15px;
     margin-left: 5px;
-    padding: 0 5px;
+    padding: 0 1px;
 }
 
 #workspaces button.active {
@@ -122,6 +123,6 @@ window#waybar {
 #custom-power {
     background-color: @red;
     border-radius: 15px 0 0 15px;
-    padding: 0 20px 0 10px;
+    padding: 0 15px 0 10px;
 }
 
