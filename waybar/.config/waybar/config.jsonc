@@ -1,6 +1,12 @@
 {
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": [],
+    "fixed-center": true,
+    "include": [
+        "modules.jsonc"
+    ],
+    "modules-center": ["hyprland/submap"],
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
     "modules-right": [
         "tray",
         "bluetooth",
@@ -9,74 +15,8 @@
         "battery",
         "network",
         "clock",
-        "custom/power"],
-    "spacing": 0,
-    "fixed-center": true,
+        "custom/power",
+    ],
     "reload_style_on_change": true,
-    "tray": {
-        "spacing": 10
-    },
-    "bluetooth": {
-        "format": "{status} ",
-        "on-click": "blueberry"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}   {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        // "format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "nm-connection-editor"
-    },
-    "clock": {
-        "timezone": "America/Sao_Paulo",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "custom/power": {
-        "format" : "⏻",
-		"tooltip": false,
-        "on-click": "~/.config/eww/scripts/powermenu.sh"
-    }
+    "spacing": 0
 }
