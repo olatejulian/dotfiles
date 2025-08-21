@@ -1,0 +1,49 @@
+$background: #282A36;
+$currentline: #6272A4;
+$selection: #44475A;
+$foreground: #F8F8F2;
+$comment: #6272A4;
+$red: #FF5555;
+$orange: #FFB86C;
+$yellow: #F1FA8C;
+$green: #50FA7B;
+$cyan: #8BE9FD;
+$purple: #BD93F9;
+$pink: #FF79C6;
+
+.powermenu-box {
+    border-radius: 25px;
+}
+
+.powermenu-item {
+    border-radius: inherit;
+}
+
+.powermenu-item-tooltip {
+    background-color: $selection;
+    border-radius: 5px;
+    color: $foreground;
+    margin: 0 20px 0 0;
+    padding: 5px;
+
+}
+
+.powermenu-item-box {
+    border-radius: inherit;
+}
+
+.powermenu-button {
+    background-color: $background;
+    border-radius: inherit;
+
+    &:hover {
+        background-color: $purple;
+    }
+}
+
+
+.powermenu-icon {
+    border-radius: inherit;
+    color: $foreground;
+    padding: 8px 15px;
+}

@@ -1,0 +1,53 @@
+(defwidget powermenu_item [icon tooltip_text onclick]
+    (tooltip :class "powermenu-item"
+        (label :text {tooltip_text} :class "powermenu-item-tooltip")
+        (box :orientation "v" :space-evenly false :class "powermenu-item-box"
+            (button :class "powermenu-button" :onclick {onclick}
+                (label :class "powermenu-icon" :text {icon})
+            )
+
+        )
+    )
+)
+
+(defwidget powermenu []
+    (box
+        :orientation "v"
+        :spacing "5"
+        :valign "center"
+        :halign "center"
+        :class "powermenu-box"
+        (powermenu_item :icon "󰐥" :tooltip_text "Power Off" :onclick "systemctl poweroff")
+
+        (powermenu_item :icon "󰜉" :tooltip_text "Reboot" :onclick "systemctl reboot")
+
+        (powermenu_item
+            :icon ""
+            :tooltip_text "Lock"
+            :onclick "sleep 0.1 && hyprlock & eww close powermenu &"
+        )
+
+        (powermenu_item
+            :icon "󰤄"
+            :tooltip_text "Suspend"
+            :onclick "sleep 0.1 && hyprlock & systemctl suspend & eww close powermenu &"
+        )
+
+        (powermenu_item
+            :icon "󰗼"
+            :tooltip_text "Logout"
+            :onclick "hyprctl dispatch exit 0"
+        )
+    )
+)
+
+(defwindow powermenu
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry
+        :anchor "top right"
+        :x "5px"
+        :y "5px"
+    )
+    (powermenu)
+)
