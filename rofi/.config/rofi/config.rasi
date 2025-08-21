@@ -4,7 +4,7 @@ configuration {
     display-run: "Run";
     display-ssh: "SSH";
     display-window: "Windows";
-    font: "RobotoMono Nerd Font Propo Bold 11";
+    font: "JetBrainsMono Nerd Font Propo 11";
     icon-theme: "Dracula";
     lines: 8;
     modi: "drun,run,window,ssh";
