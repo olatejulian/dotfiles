@@ -1,0 +1,22 @@
+#workspaces {
+    background-color: @background;
+    border-radius: 5px;
+}
+
+#workspaces button {
+    background-color: @currentline;
+    border-radius: 5px;
+    color: @foreground;
+    margin: 0 0 0 4px;
+    padding: 0 10px;
+}
+
+#workspaces button.active {
+    background-color: @purple;
+    color: @foreground;
+}
+
+#workspaces button:hover {
+    background-color: @selection;
+    color: @pink;
+}

@@ -1,128 +1,35 @@
-@import "dracula.css";
-
 * {
-    font-family: Noto Sans;
-    font-size: 13px;
-    font-weight: 900;
-    /* reset positions */
-    border-radius: 0;
+    font-family: "JetBrains Mone Nerd Font Propo";
+    font-size: 14px;
     border: 0;
     margin: 0;
-    min-height: 0;
     padding: 0;
+    min-height: 0;
+    min-width: 0;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0);
-    color: @foreground;
+    background-color: transparent;
+    padding: 2px 0 0 0;
 }
 
-#workspaces {
-    background-color: @background;
-    border-radius: 0 15px 15px 0;
-}
-
-#workspaces button {
-    border-radius: 15px;
-    margin-left: 5px;
-    padding: 0 1px;
-}
-
-#workspaces button.active {
-    background-color: @purple;
-}
-
-#workspaces button:hover {
-    background-color: @currentline;
-}
-/* General modules style */
-#pulseaudio,
-#backlight,
-#battery,
-#network
-{
-    background-color: @background;
-    border-left: 0;
-    border-right: 0;
-    padding: 0 5px;
-}
+/* Color palette */
+@import "dracula.css";
 
 /* Modules */
-/* tray */
-#tray {
-    background-color: @background;
-    border-radius: 15px;
-    margin-right: 10px;
-    padding: 0 10px;
+@import "css/audio.css";
 
-}
+@import "css/backlight.css";
 
-/* bluetooth */
-#bluetooth {
-    background-color: @background;
-    border-radius: 15px 0 0 15px;
-    color: @cyan;
-    padding: 0 10px;
-}
+@import "css/battery.css";
 
-/* pulseaudio */
-#pulseaudio {
-    color: #586798;
-}
+@import "css/bluetooth.css";
 
-/* backlight */
-#backlight {
-    color: @pink;
-}
+@import "css/clock.css";
 
-/* battery */
-#battery {
-    color: @purple;
-}
+@import "css/network.css";
 
+@import "css/powermenu.css";
 
-#battery.charging, #battery.plugged {
-    color: @green;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-    color: @red;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-/* network */
-#network {
-    color: #014587;
-}
-
-#network.disconnected {
-    color: @red;
-}
-
-/* clock */
-#clock {
-    background-color: @background;
-    color: @orange;
-    border-radius: 0 15px 15px 0;
-    margin-right: 10px;
-    padding: 0 10px;
-}
-
-/* custom/power */
-#custom-power {
-    background-color: @red;
-    border-radius: 15px 0 0 15px;
-    padding: 0 15px 0 10px;
-}
+@import "css/workspaces.css";
 

@@ -1,7 +1,7 @@
 {
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
+        "format": "{icon} {percent}%",
         "format-icons": [
             "",
             "",
@@ -15,10 +15,10 @@
         ]
     },
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-alt": "{time} {icon}",
-        "format-charging": "{capacity}% ",
-        "format-full": "{capacity}% {icon}",
+        "format": "{icon}  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        "format-charging": "  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": [
@@ -28,7 +28,7 @@
             "",
             ""
         ],
-        "format-plugged": "{capacity}% ",
+        "format-plugged": "  {capacity}%",
         "states": {
             "critical": 15,
             "good": 95,
@@ -36,7 +36,7 @@
         }
     },
     "bluetooth": {
-        "format": "{status} ",
+        "format": " {status}",
         "on-click": "blueberry"
     },
     "clock": {
@@ -45,25 +45,25 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "custom/power": {
-        "format": "⏻",
+        "format": "⏻ ",
         "on-click": "~/.config/eww/scripts/powermenu.sh",
         "tooltip": false
     },
     "network": {
-        "format-disconnected": "Disconnected ⚠",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-wifi": "{signalStrength}% ",
         // "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "nm-connection-editor",
+        "format-disconnected": "⚠  Disconnected",
+        "format-ethernet": "  {ipaddr}/{cidr}",
+        "format-linked": "  {ifname} (No IP)",
+        "format-wifi": "  {signalStrength}%",
         // "format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format": "{ifname} via {gwaddr} "
+        "on-click": "nm-connection-editor",
+        "tooltip-format": "  {ifname} via {gwaddr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}   {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format": "{icon}  {volume}% {format_source}",
+        "format-bluetooth": "{icon}  {volume}%  {format_source}",
+        "format-bluetooth-muted": " {icon}   {format_source}",
         "format-icons": {
             "car": "",
             "default": [
@@ -78,7 +78,7 @@
             "portable": ""
         },
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": " {volume}% ",
         "format-source-muted": "",
         "on-click": "pavucontrol"
     },

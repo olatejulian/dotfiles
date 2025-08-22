@@ -1,0 +1,8 @@
+#battery {
+    background-color: @background;
+    border-radius: 5px;
+    color: @purple;
+    margin: 0 2px;
+    padding: 0 10px;
+}
+

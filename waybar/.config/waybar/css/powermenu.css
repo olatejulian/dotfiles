@@ -1,0 +1,8 @@
+#custom-power {
+    background-color: @red;
+    border-radius: 5px;
+    color: @foreground;
+    margin: 0 5px 0 2px;
+    padding: 0 15px;
+}
+
