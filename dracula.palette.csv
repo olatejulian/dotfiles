@@ -1,0 +1,13 @@
+token,hex,rgb
+background,#282A36,rgb(40, 42, 54)
+current_line,#6272A4,rgb(98, 114, 164)
+selection,#44475A,rgb(68, 71, 90)
+foreground,#F8F8F2,rgb(248, 248, 242)
+comment,#6272A4,rgb(98, 114, 164)
+red,#FF5555,rgb(255, 85, 85)
+orange,#FFB86C,rgb(255, 184, 108)
+yellow,#F1FA8C,rgb(241, 250, 140)
+green,#50FA7B,rgb(80, 250, 123)
+cyan,#8BE9FD,rgb(139, 233, 253)
+purple,#BD93F9,rgb(189, 147, 249)
+pink,#FF79C6,rgb(255, 121, 198)
