@@ -2,7 +2,11 @@
     background-color: @red;
     border-radius: 5px;
     color: @foreground;
-    margin: 0 5px 0 2px;
-    padding: 0 15px;
+    margin: 0 2px 0 5px;
+    padding: 0 10px;
+}
+
+#custom-power:hover {
+    background-color: @selection;
 }
 

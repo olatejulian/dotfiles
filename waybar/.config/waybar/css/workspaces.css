@@ -1,13 +1,12 @@
 #workspaces {
-    background-color: @background;
-    border-radius: 5px;
+    background-color: transparent;
 }
 
 #workspaces button {
     background-color: @currentline;
     border-radius: 5px;
     color: @foreground;
-    margin: 0 0 0 4px;
+    margin: 0 2px;
     padding: 0 10px;
 }
 

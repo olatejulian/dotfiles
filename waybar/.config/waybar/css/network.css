@@ -5,3 +5,7 @@
     margin: 0 2px;
     padding: 0 10px;
 }
+
+#network:hover {
+    background-color: @selection;
+}

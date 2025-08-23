@@ -6,3 +6,6 @@
     padding: 0 10px;
 }
 
+#pulseaudio:hover {
+    background-color: @selection;
+}
