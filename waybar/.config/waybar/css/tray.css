@@ -1,12 +1,7 @@
-#bluetooth {
+#tray {
     background-color: @background;
     border-radius: 5px;
-    color: @cyan;
     margin: 0 2px;
     padding: 0 10px;
-}
-
-#bluetooth:hover {
-    background-color: @selection;
 }
 

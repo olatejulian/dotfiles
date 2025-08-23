@@ -10,7 +10,6 @@
 
 window#waybar {
     background-color: transparent;
-    padding: 2px 0 0 0;
 }
 
 /* Color palette */
@@ -30,6 +29,8 @@ window#waybar {
 @import "css/network.css";
 
 @import "css/powermenu.css";
+
+@import "css/tray.css";
 
 @import "css/workspaces.css";
 
