@@ -40,6 +40,7 @@
         "on-click": "blueberry"
     },
     "clock": {
+        "format": "  {:%H:%M}",
         "format-alt": "{:%Y-%m-%d}",
         "timezone": "America/Sao_Paulo",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
