@@ -5,6 +5,7 @@
     ],
     "modules-center": ["hyprland/submap"],
     "modules-left": [
+        "custom/power",
         "hyprland/workspaces"
     ],
     "modules-right": [
@@ -15,7 +16,6 @@
         "battery",
         "network",
         "clock",
-        "custom/power",
     ],
     "reload_style_on_change": true,
     "spacing": 0
