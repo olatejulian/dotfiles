@@ -3,10 +3,11 @@
     "include": [
         "modules.jsonc"
     ],
-    "modules-center": ["hyprland/submap"],
+    "modules-center": [],
     "modules-left": [
         "custom/power",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "keyboard-state",
     ],
     "modules-right": [
         "tray",

@@ -65,6 +65,18 @@ window#waybar {
     background-color: @selection;
 }
 
+#keyboard-state {
+    background-color: @background;
+    border: 1px solid @cyan;
+    color: @foreground;
+    margin: 0 0 0 5px;
+}
+
+#keyboard-state label.locked {
+    background-color: @selection;
+    color: @currentline;
+}
+
 #network {
     color: @yellow;
 }

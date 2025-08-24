@@ -51,6 +51,15 @@
         "on-click": "~/.config/eww/scripts/powermenu.sh",
         "tooltip": false
     },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": " {icon}  {name} ",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
     "network": {
         // "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "format-disconnected": "⚠  Disconnected",
