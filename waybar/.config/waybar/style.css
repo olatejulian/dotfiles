@@ -16,11 +16,14 @@ window#waybar {
     background-color: transparent;
 }
 
+/* window#waybar>box { */
+/*     padding: 2px 0; */
+/* } */
+
 /* Group information settings */
 #information {
     background-color: @background;
-    border: 1px solid @cyan;
-    margin: 0 5px 0 0;
+    border: 1px solid @purple;
 }
 
 #backlight,
@@ -30,6 +33,7 @@ window#waybar {
 #network,
 #pulseaudio
 {
+    background-color: @background;
     padding: 0 5px;
 }
 /* End of group information settings */
@@ -59,7 +63,6 @@ window#waybar {
     background-color: @background;
     border: 1px solid @red;
     color: @red;
-    margin: 0 0 0 5px;
     padding: 0 10px;
 }
 
@@ -69,7 +72,7 @@ window#waybar {
 
 #keyboard-state {
     background-color: @background;
-    border: 1px solid @cyan;
+    border: 1px solid @purple;
     color: @foreground;
     margin: 0 0 0 5px;
 }
@@ -99,14 +102,14 @@ window#waybar {
 
 #tray {
     background-color: @background;
-    border: 1px solid @cyan;
+    border: 1px solid @purple;
     margin: 0 5px 0 0;
     padding: 0 5px;
 }
 
 #workspaces {
     background-color: @background;
-    border: 1px solid @cyan;
+    border: 1px solid @purple;
     margin: 0 0 0 5px;
 }
 
