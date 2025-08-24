@@ -11,13 +11,19 @@
     ],
     "modules-right": [
         "tray",
-        "bluetooth",
-        "pulseaudio",
-        "backlight",
-        "battery",
-        "network",
-        "clock",
+        "group/information"
     ],
     "reload_style_on_change": true,
-    "spacing": 0
+    "spacing": 0,
+    "group/information": {
+        "orientation": "horizontal",
+        "modules": [
+            "bluetooth",
+            "pulseaudio",
+            "backlight",
+            "battery",
+            "network",
+            "clock"
+        ]
+    }
 }

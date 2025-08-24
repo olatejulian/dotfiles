@@ -16,6 +16,13 @@ window#waybar {
     background-color: transparent;
 }
 
+/* Group information settings */
+#information {
+    background-color: @background;
+    border: 1px solid @cyan;
+    margin: 0 5px 0 0;
+}
+
 #backlight,
 #battery,
 #bluetooth,
@@ -23,11 +30,9 @@ window#waybar {
 #network,
 #pulseaudio
 {
-    background-color: @background;
-    border-bottom: 1px solid @cyan;
-    border-top: 1px solid @cyan;
     padding: 0 5px;
 }
+/* End of group information settings */
 
 #backlight {
     color: @green;
@@ -38,7 +43,6 @@ window#waybar {
 }
 
 #bluetooth {
-    border-left: 1px solid @cyan;
     color: @cyan;
 }
 
@@ -48,9 +52,7 @@ window#waybar {
 }
 
 #clock {
-    border-right: 1px solid @cyan;
     color: @orange;
-    margin: 0 5px 0 0;
 }
 
 #custom-power {
