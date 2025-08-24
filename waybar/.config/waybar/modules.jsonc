@@ -46,7 +46,8 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "custom/power": {
-        "format": "⏻ ",
+        // "format": " ⏻  ",
+        "format": " ⏼  ",
         "on-click": "~/.config/eww/scripts/powermenu.sh",
         "tooltip": false
     },

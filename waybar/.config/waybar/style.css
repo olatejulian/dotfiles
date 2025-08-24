@@ -1,6 +1,7 @@
 * {
-    font-family: "JetBrains Mone Nerd Font Propo";
+    font-family: "JetBrains Mone Nerd Font Mono";
     font-size: 14px;
+    border-radius: 0;
     border: 0;
     margin: 0;
     padding: 0;
@@ -8,29 +9,103 @@
     min-width: 0;
 }
 
+/* Color palette */
+@import "dracula.css";
+
 window#waybar {
     background-color: transparent;
 }
 
-/* Color palette */
-@import "dracula.css";
+#backlight,
+#battery,
+#bluetooth,
+#clock,
+#network,
+#pulseaudio
+{
+    background-color: @background;
+    border-bottom: 1px solid @cyan;
+    border-top: 1px solid @cyan;
+    padding: 0 5px;
+}
 
-/* Modules */
-@import "css/audio.css";
+#backlight {
+    color: @green;
+}
 
-@import "css/backlight.css";
+#battery {
+    color: @purple;
+}
 
-@import "css/battery.css";
+#bluetooth {
+    border-left: 1px solid @cyan;
+    color: @cyan;
+}
 
-@import "css/bluetooth.css";
+#bluetooth:hover {
+    background-color: @selection;
+    color: @currentline;
+}
 
-@import "css/clock.css";
+#clock {
+    border-right: 1px solid @cyan;
+    color: @orange;
+    margin: 0 5px 0 0;
+}
 
-@import "css/network.css";
+#custom-power {
+    background-color: @background;
+    border: 1px solid @red;
+    color: @red;
+    margin: 0 0 0 5px;
+    padding: 0 10px;
+}
 
-@import "css/powermenu.css";
+#custom-power:hover {
+    background-color: @selection;
+}
 
-@import "css/tray.css";
+#network {
+    color: @yellow;
+}
 
-@import "css/workspaces.css";
+#network:hover {
+    background-color: @selection;
+    color: @currentline;
+}
 
+#pulseaudio {
+    color: @pink;
+}
+
+#pulseaudio:hover {
+    background-color: @selection;
+    color: @currentline;
+}
+
+#tray {
+    background-color: @background;
+    border: 1px solid @cyan;
+    margin: 0 5px 0 0;
+    padding: 0 5px;
+}
+
+#workspaces {
+    background-color: @background;
+    border: 1px solid @cyan;
+    margin: 0 0 0 5px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+}
+
+#workspaces button.active {
+    background-color: @currentline;
+    color: @pink;
+}
+
+#workspaces button:hover {
+    background-color: @selection;
+    color: @currentline;
+}
