@@ -137,6 +137,9 @@ zstyle ':completion:*:' list-colors "${(s.:.)LS_COLORS}"
 # Fuzzy finder
 source <(fzf --zsh)
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # User Profile
 ZPROFILE="$HOME/.zprofile"
 

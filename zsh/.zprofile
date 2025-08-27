@@ -2,6 +2,7 @@
 
 # ===========================================<ALIASES>==============================================
 alias arch-up="sudo pacman -Suuyy --noconfirm; yay -Suuyy --noconfirm"
+alias cd="zoxide"
 alias cp="cp -i"
 alias d="docker"
 alias dc="docker compose"
