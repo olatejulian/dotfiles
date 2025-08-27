@@ -13,17 +13,16 @@
 @import "dracula.css";
 
 window#waybar {
-    background-color: transparent;
+    background-color: @background;
 }
 
-/* window#waybar>box { */
-/*     padding: 2px 0; */
-/* } */
+window#waybar>box {
+    border: 1px solid @purple;
+}
 
 /* Group information settings */
 #information {
     background-color: @background;
-    border: 1px solid @purple;
 }
 
 #backlight,
@@ -61,7 +60,6 @@ window#waybar {
 
 #custom-power {
     background-color: @background;
-    border: 1px solid @red;
     color: @red;
     padding: 0 10px;
 }
@@ -72,7 +70,6 @@ window#waybar {
 
 #keyboard-state {
     background-color: @background;
-    border: 1px solid @purple;
     color: @foreground;
     margin: 0 0 0 5px;
 }
@@ -109,7 +106,6 @@ window#waybar {
 
 #workspaces {
     background-color: @background;
-    border: 1px solid @purple;
     margin: 0 0 0 5px;
 }
 
