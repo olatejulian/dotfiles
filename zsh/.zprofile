@@ -109,8 +109,7 @@ fi
 if asdf --version &>/dev/null; then
     export ASDF_DATA_DIR="$HOME/.asdf"
 
-    # set asdf shims
-    if [ -d $ASDF_DATA_DIR ]; then
+    if [ -d "$ASDF_DATA_DIR" ] && [[ ":$PATH:" != *":$ASDF_DATA_DIR/shims:"* ]]; then
         export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
     fi
