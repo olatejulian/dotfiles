@@ -144,3 +144,4 @@ eval "$(zoxide init zsh)"
 ZPROFILE="$HOME/.zprofile"
 
 [[ -f "$ZPROFILE" ]] && source "$ZPROFILE"
+
