@@ -36,6 +36,13 @@ export EDITOR="nvim"
 export PAGER="less"
 export TERMINAL="ghostty"
 export VISUAL="code -w"
+
+# Quantum Espresso
+# available versions: 
+#   - 7.3.1
+#   - 7.5 (CFLAGS="-fPIC" FFLAGS="-fPIC" MPIF90=mpif90)
+
+export qedir="/opt/quantum-espresso/7.2/software"
 # ==================================================================================================
 
 # ==========================================<FUNCTIONS>=============================================
