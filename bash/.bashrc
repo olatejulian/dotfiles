@@ -83,6 +83,11 @@ alias kgp='kubectl get pods'
 alias kgs='kubectl get svc'
 # ==================================================================================================
 
+# ===========================================<COMPLETION>===========================================
+[[ -r /usr/share/bash-completion/bash_completion ]] &&
+source /usr/share/bash-completion/bash_completion
+# ==================================================================================================
+
 # =============================================<FUNCTIONS>==========================================
 mkcd() {
     mkdir -p "$1" && cd "$1"
@@ -100,6 +105,14 @@ extract() {
         *) echo "unsupported archive" ;;
     esac
 }
+# ==================================================================================================
+
+# ==============================================<SSH>===============================================
+if [[ -n "$SSH_CONNECTION" ]]; then
+    export REMOTE_SESSION=1
+else
+    export REMOTE_SESSION=0
+fi
 # ==================================================================================================
 
 # ==============================================<COLORS>============================================
@@ -123,24 +136,28 @@ kube_context() {
 
 # ===========================================<NATIVE PROMPT>========================================
 build_prompt() {
-    local EXIT="$?"
+    local EXIT=$?
     local STATUS=""
     local HOSTCOLOR="$GREEN"
     local GIT=""
     local KUBE=""
 
-    [[ $EXIT -ne 0 ]] && STATUS="${RED}✗ ${EXIT}${RESET} "
+    (( EXIT != 0 )) && STATUS="${RED}✗${EXIT}${RESET} "
 
     [[ -n "$SSH_CONNECTION" ]] && HOSTCOLOR="$CYAN"
-    [[ $EUID -eq 0 ]] && HOSTCOLOR="$RED"
+    (( EUID == 0 )) && HOSTCOLOR="$RED"
 
-    local BRANCH
-    BRANCH="$(git_branch)"
-    [[ -n "$BRANCH" ]] && GIT=" ${YELLOW}(${BRANCH})${RESET}"
+    if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        local BRANCH
+        BRANCH="$(git_branch)"
+        [[ -n "$BRANCH" ]] && GIT=" ${YELLOW}(${BRANCH})${RESET}"
+    fi
 
-    local KC
-    KC="$(kube_context)"
-    [[ -n "$KC" ]] && KUBE=" ${BLUE}[${KC}]${RESET}"
+    if [[ -f "$HOME/.kube/config" ]]; then
+        local KC
+        KC="$(kube_context)"
+        [[ -n "$KC" ]] && KUBE=" ${BLUE}[${KC}]${RESET}"
+    fi
 
     PS1="${STATUS}${HOSTCOLOR}\u@\h${RESET}:${BLUE}\W${RESET}${GIT}${KUBE}\n\$ "
 }
