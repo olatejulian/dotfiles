@@ -23,22 +23,8 @@ alias vi="nvim"
 alias vm="vboxmanage"
 # ==================================================================================================
 
-# =====================================<ENVIROMENT VARIABLES>=======================================
-# XDG Paths
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_STATE_HOME="$HOME/.local/state"
-
-# Default apps
-export BROWSER="brave"
-export EDITOR="nvim"
-export PAGER="less"
-export TERMINAL="ghostty"
-export VISUAL="code -w"
-
 # Quantum Espresso
-# available versions: 
+# available versions:
 #   - 7.3.1
 #   - 7.5 (CFLAGS="-fPIC" FFLAGS="-fPIC" MPIF90=mpif90)
 
@@ -67,49 +53,6 @@ ex() {
         echo "'$1' is not a valid file"
     fi
 }
-# ==================================================================================================
-
-# =========================================<KEYBINDINGS>============================================
-# Ability to use ctrl + backspace to backward a word
-bindkey '^H' backward-kill-word
-# ==================================================================================================
-
-# ============================================<PATHS>===============================================
-# user local binaries
-LOCAL_BIN=$HOME/.local/bin
-
-[[ ":$PATH:" != *":$LOCAL_BIN:"* && -d "$LOCAL_BIN" ]] && export PATH="$LOCAL_BIN:$PATH"
-
-# user local secrets
-SECRETS_PATH="$HOME/.secrets"
-
-[[ -f "$SECRETS_PATH" ]] && source $SECRETS_PATH
-# ==================================================================================================
-
-# ==========================================<PROCESSES>=============================================
-# ssh agent
-# Ensure ssh-agent is running and environment variables are loaded
-export SSH_ENV="$HOME/.ssh/ssh-agent.env"
-
-function start_ssh_agent {
-    ssh-agent -s > "$SSH_ENV"
-    chmod 600 "$SSH_ENV"
-}
-
-if [ -z "$SSH_AUTH_SOCK" ]; then
-    if [ -f "$SSH_ENV" ]; then
-        . "$SSH_ENV" > /dev/null
-
-        # Check if agent is alive
-        if ! kill -0 "$SSH_AGENT_PID" 2>/dev/null; then
-            start_ssh_agent
-            . "$SSH_ENV" > /dev/null
-        fi
-    else
-        start_ssh_agent
-        . "$SSH_ENV" > /dev/null
-    fi
-fi
 # ==================================================================================================
 
 # ========================================<ASDF SETTINGS>===========================================
@@ -143,3 +86,29 @@ if asdf --version &>/dev/null; then
 fi
 # ==================================================================================================
 
+# ==========================================<PROCESSES>=============================================
+# ssh agent
+# Ensure ssh-agent is running and environment variables are loaded
+export SSH_ENV="$HOME/.ssh/ssh-agent.env"
+
+function start_ssh_agent {
+    ssh-agent -s > "$SSH_ENV"
+    chmod 600 "$SSH_ENV"
+}
+
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    if [ -f "$SSH_ENV" ]; then
+        . "$SSH_ENV" > /dev/null
+
+        # Check if agent is alive
+        if ! kill -0 "$SSH_AGENT_PID" 2>/dev/null; then
+            start_ssh_agent
+            . "$SSH_ENV" > /dev/null
+        fi
+    else
+        start_ssh_agent
+        . "$SSH_ENV" > /dev/null
+    fi
+fi
+# ==================================================================================================
+# ==================================================================================================

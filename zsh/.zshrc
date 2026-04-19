@@ -100,11 +100,6 @@ OHMYZSH_SH=$ZSH/oh-my-zsh.sh
 
 [[ -f "$OHMYZSH_SH" ]] && source $OHMYZSH_SH
 
-export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
 # History variables
 HISTFILE=$HOME/.zsh_history
 HISTDUP=erase
@@ -135,4 +130,32 @@ source <(fzf --zsh)
 
 # Zoxide
 eval "$(zoxide init zsh)"
+
+# ===========================================<ALIASES>==============================================
+alias arch-up="sudo pacman -Suuyy --noconfirm; yay -Suuyy --noconfirm"
+alias cd="z"
+alias cp="cp -i"
+alias d="docker"
+alias dc="docker compose"
+alias deb-up="sudo apt upgrade -y; sudo apt update -y"
+alias df="df -h"
+alias di="sudo apt install -y"
+alias free="free -m"
+alias g="git"
+alias gis="clear; git status"
+alias i="yay -S --noconfirm"
+alias k="kubectl"
+alias mk="minikube kubectl"
+alias pc="pre-commit"
+alias r="yay -Rcnssuv --noconfirm"
+alias src="source $HOME/.zshrc"
+alias src-bash="source $HOME/.bashrc"
+alias vi="nvim"
+alias vm="vboxmanage"
+# ==================================================================================================
+
+# =========================================<KEYBINDINGS>============================================
+# Ability to use ctrl + backspace to backward a word
+bindkey '^H' backward-kill-word
+# ==================================================================================================
 
