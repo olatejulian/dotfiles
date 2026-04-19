@@ -1,4 +1,4 @@
-# ==============================<MY Z SHELL ENVIROMENT CONFIGURATION>===============================
+# ==================================<MY Z SHELL ENVIRONMENT SETUP>==================================
 # ===========================================<ZDOTDIR>==============================================
 # Keep configs in $HOME. Change only if migrating dotfiles elsewhere.
 export ZDOTDIR="$HOME"
@@ -14,9 +14,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # =====================================<ENVIRONMENT VARIABLES>======================================
 export EDITOR="nvim"
 export LANG="en_US.UTF-8"
-export MANPATH="/usr/local/man:$MANPATH"
 export PAGER="less"
-export TERMINAL="ghostty"
 export VISUAL="code -w"
 # ==================================================================================================
 
@@ -24,8 +22,8 @@ export VISUAL="code -w"
 typeset -U path PATH
 
 path=(
-    "$HOME/.cargo/bin"
     "$HOME/.local/bin"
+    "$HOME/.cargo/bin"
     $path
 )
 
