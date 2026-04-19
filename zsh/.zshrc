@@ -95,7 +95,6 @@ plugins=(
 
 # load zsh-completions plugin before oh-my-zsh
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-autoload -U compinit && compinit
 
 OHMYZSH_SH=$ZSH/oh-my-zsh.sh
 
@@ -105,9 +104,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
 
 # History variables
 HISTFILE=$HOME/.zsh_history
@@ -139,9 +135,4 @@ source <(fzf --zsh)
 
 # Zoxide
 eval "$(zoxide init zsh)"
-
-# User Profile
-ZPROFILE="$HOME/.zprofile"
-
-[[ -f "$ZPROFILE" ]] && source "$ZPROFILE"
 
