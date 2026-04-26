@@ -219,7 +219,7 @@ OHMYZSH_SH=$ZSH/oh-my-zsh.sh
 command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
 # Oh my posh
-command -v oh-my-posh >/dev/null && eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/theme.omp.json)"
+command -v oh-my-posh >/dev/null && eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-poshtheme.omp.toml)"
 # ==================================================================================================
 
 # =========================================<KEYBINDINGS>============================================
